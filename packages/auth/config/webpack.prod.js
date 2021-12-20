@@ -6,9 +6,9 @@ const packageJSON = require("../package.json");
 const prodConfig = {
   mode: "production",
   output: {
-    filename:'[name].[contenthash].js',
-    publicPath: '/auth/latest/'
-  }
+    filename: "[name].[contenthash].js",
+    publicPath: "/auth/latest/",
+  },
   plugins: [
     new ModuleFederationPlugin({
       name: "auth",
@@ -16,7 +16,7 @@ const prodConfig = {
       exposes: {
         "./AuthApp": "./src/bootstrap",
       },
-      shared: packageJSON.dependencies
+      shared: packageJSON.dependencies,
     }),
   ],
 };
